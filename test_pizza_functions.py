@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 def test_baking(capsys):
     with patch("random.randint") as false_int:
+        patch("time.sleep", return_value = None)
         false_int.return_value = 1
         baking(Margherita('L'))
         captured = capsys.readouterr()
@@ -16,6 +17,7 @@ def test_baking(capsys):
 
 def test_delivery(capsys):
     with patch("random.randint") as false_int:
+        patch("time.sleep", return_value = None)
         false_int.return_value = 1
         delivering(Margherita('L'))
         captured = capsys.readouterr()
