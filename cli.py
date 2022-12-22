@@ -19,15 +19,14 @@ def order(pizza: str, delivery: bool, size: str) -> None:
     """Готовит и доставляет пиццу"""
     if pizza.lower() == 'pepperoni':
         cur_pizza = Pepperoni(size)
-        processing(cur_pizza, delivery)
     elif pizza.lower() == 'margherita':
         cur_pizza = Margherita(size)
-        processing(cur_pizza, delivery)
     elif pizza.lower() == 'hawaiian':
         cur_pizza = Hawaiian(size)
-        processing(cur_pizza, delivery)
     else:
         print("Ознакомьтесь с меню! Такой пиццы нет...")
+        return
+    processing(cur_pizza, delivery)
 
 
 @cli.command()
